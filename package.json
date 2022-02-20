@@ -14,6 +14,8 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.23.0",
+    "micro": "^9.3.4",
+    "micro-cors": "^0.1.1",
     "next": "^12.0.8",
     "prism-theme-night-owl": "^1.4.0",
     "prismjs": "^1.26.0",
@@ -22,6 +24,7 @@
     "react-bricks-ui": "^0.3.20",
     "react-dom": "^17.0.2",
     "stripe": "^8.203.0",
+    "swr": "^1.2.2",
     "use-shopping-cart": "^3.0.5"
   },
   "devDependencies": {
