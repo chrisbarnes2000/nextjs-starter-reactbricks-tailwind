@@ -5,7 +5,16 @@ import bricks from './bricks'
 import pageTypes from './pageTypes'
 import NextLink from './NextLink'
 
-const config: types.ReactBricksConfig = {
+interface ModifiedInterface extends types.ReactBricksConfig {
+  // Set your amount limits: Use float for decimal currencies and
+  // Integer for zero-decimal currencies: https://stripe.com/docs/currencies#zero-decimal.
+  CURRENCY: string
+  MIN_AMOUNT: number
+  MAX_AMOUNT: number
+  AMOUNT_STEP: number
+}
+
+const config: ModifiedInterface = {
   appId: process.env.NEXT_PUBLIC_APP_ID,
   apiKey: process.env.API_KEY,
   pageTypes,
@@ -27,6 +36,10 @@ const config: types.ReactBricksConfig = {
   //responsiveBreakpoints: [{ type: types.DeviceType.Phone, width: 480, label: 'Smartphone'}],
   enableAutoSave: true,
   disableSaveIfInvalidProps: false,
+  CURRENCY: 'usd',
+  MIN_AMOUNT: 10.0,
+  MAX_AMOUNT: 10000.0,
+  AMOUNT_STEP: 5.0,
 }
 
 export default config
